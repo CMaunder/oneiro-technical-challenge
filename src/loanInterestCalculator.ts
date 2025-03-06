@@ -21,7 +21,7 @@ export async function generateLoanOutput(
     (endDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24)
   );
 
-  const DailyInterestRecords: DailyInterestRecord[] = [];
+  const dailyInterestRecords: DailyInterestRecord[] = [];
 
   for (let elapsedDays = 0; elapsedDays <= numberOfDaysLoaned; elapsedDays++) {
     const accrualDate = new Date(startDate);
@@ -40,7 +40,7 @@ export async function generateLoanOutput(
     const interest = simpleDailyInterest(loanAmount, totalInterestRate);
 
     const cumulativeInterestToDate = interest * (elapsedDays + 1);
-    DailyInterestRecords.push({
+    dailyInterestRecords.push({
       interestExcludingMargin,
       interest,
       accrualDate: formattedAccrualDate,
@@ -48,5 +48,5 @@ export async function generateLoanOutput(
       cumulativeInterestToDate,
     });
   }
-  return DailyInterestRecords;
+  return dailyInterestRecords;
 }
