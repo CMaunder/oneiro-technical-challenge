@@ -3,5 +3,7 @@
 ## Setup & Run Instructions
 
 npm install
+
 npm run build
+
 npm start
