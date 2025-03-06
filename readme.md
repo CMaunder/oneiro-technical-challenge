@@ -12,4 +12,4 @@ npm start
 
 Unit tests!
 
-Edit exising record option could either ask the user which field they wanted to update, or enhance the code so that hitting enter would leave it unchanged.
+Edit exising record option could either ask the user which field they want to update, or hitting enter would leave the existing record for that field unchanged.
