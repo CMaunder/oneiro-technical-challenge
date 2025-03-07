@@ -9,7 +9,7 @@ type HistoryItem = {
 
 const resultHistory: HistoryItem[] = [];
 
-export const rl = readline.createInterface({
+const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
@@ -96,7 +96,7 @@ export async function promptUserMenu(): Promise<void> {
   promptUserMenu();
 }
 
-export async function getLoanDetails(): Promise<LoanDetails> {
+async function getLoanDetails(): Promise<LoanDetails> {
   try {
     const startDateStr = await askQuestion("Enter Start Date (YYYY-MM-DD): ");
     const startDate = parseDate(startDateStr);
